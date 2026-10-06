@@ -1,0 +1,108 @@
+% ARTI 303 - Programming for AI
+% Lab 5 - Task 1: The Simpsons family tree - Queries
+% Name: Rawan Alqattan   Section: F02
+
+% father
+?- father(homer, bart).
+true.
+?- father(marge, bart).
+false.
+?- father(abraham, X).
+X = herb ;
+X = homer.
+
+% mother
+?- mother(marge, lisa).
+true.
+?- mother(homer, lisa).
+false.
+?- mother(X, ling).
+X = selma.
+
+% son
+?- son(bart, homer).
+true.
+?- son(lisa, homer).
+false.
+?- son(X, abraham).
+X = herb ;
+X = homer.
+
+% daughter
+?- daughter(ling, selma).
+true.
+?- daughter(bart, marge).
+false.
+?- daughter(X, marge).
+X = lisa ;
+X = maggie.
+
+% brother
+?- brother(herb, homer).
+true.
+?- brother(lisa, bart).
+false.
+?- brother(X, lisa).
+X = bart ;
+X = bart.
+
+% sister
+?- sister(patty, selma).
+true.
+?- sister(bart, lisa).
+false.
+?- sister(X, bart).
+X = lisa ;
+X = maggie ;
+X = lisa ;
+X = maggie.
+
+% grandfather
+?- grandfather(abraham, lisa).
+true.
+?- grandfather(abraham, ling).
+false.
+?- grandfather(X, bart).
+X = abraham ;
+X = clancy.
+
+% aunt
+?- aunt(selma, bart).
+true.
+?- aunt(marge, bart).
+false.
+?- aunt(X, ling).
+X = marge ;
+X = patty ;
+X = marge ;
+X = patty.
+
+% uncle
+?- uncle(herb, maggie).
+true.
+?- uncle(herb, ling).
+false.
+?- uncle(X, lisa).
+X = herb.
+
+% cousin
+?- cousin(lisa, ling).
+true.
+?- cousin(bart, lisa).
+false.
+?- cousin(bart, X).
+X = ling ;
+X = ling.
+
+% ancestor
+?- ancestor(jackie, ling).
+true.
+?- ancestor(mona, herb).
+false.
+?- ancestor(X, maggie).
+X = homer ;
+X = marge ;
+X = abraham ;
+X = mona ;
+X = clancy ;
+X = jackie.
